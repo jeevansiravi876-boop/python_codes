@@ -9,7 +9,7 @@ nr_letters = int(input("how many letters would you like in your password?\n"))
 nr_symbols = int(input(f"how many symbols would you like?\n"))
 nr_numbers = int(input(f"how many numbers would you like\n"))
 
-choice = str(input("for password easy to crack by hackers press e\nor for tougher one to crack for hackers press h : "))
+choice = str(input("for password easy to crack by hackers press e\nor for tougher one to crack by hackers press h : "))
 if choice == "e":
     #easy way
     password = ""
