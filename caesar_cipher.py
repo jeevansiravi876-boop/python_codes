@@ -8,9 +8,12 @@ if direction =="encode":
         chipher_text = ""
 
         for letter in orignal_text:
-            shifted_position = alphabets.index(letter) + shifted_text
-            shifted_position %= len(alphabets)
-            chipher_text += alphabets[shifted_position]
+            if letter in alphabets:
+                shifted_position = alphabets.index(letter) + shifted_text
+                shifted_position %= len(alphabets)
+                chipher_text += alphabets[shifted_position]
+            else:
+                chipher_text += letter
         print(f"here is your encoded result : {chipher_text}")
 
     encrypt(orignal_text = text, shifted_text = shift)
@@ -27,9 +30,12 @@ else:
         chipher_text = ""
 
         for letter in orignal_text:
-            shifted_position = alphabets.index(letter) - shifted_text
-            shifted_position %= len(alphabets)
-            chipher_text += alphabets[shifted_position]
-        print(f"here is your encoded result : {chipher_text}")
+            if letter in alphabets:
+                shifted_position = alphabets.index(letter) - shifted_text
+                shifted_position %= len(alphabets)
+                chipher_text += alphabets[shifted_position]
+            else:
+                chipher_text += letter
+        print(f"here is your decoded result : {chipher_text}")
     
     decrypt(orignal_text = text, shifted_text = shift)
